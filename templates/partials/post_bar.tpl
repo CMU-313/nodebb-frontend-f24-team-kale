@@ -7,6 +7,12 @@
 					<i class="fa fa-fw fa-inbox text-primary"></i>
 					<span class="d-none d-md-inline fw-semibold">[[topic:mark-unread]]</span>
 				</button>
+
+				<button id="toggleResolveBtn" class="btn-ghost-sm ff-secondary d-flex gap-2 align-items-center" onclick="toggleResolve()">
+					<i id="resolveIcon" class="fa fa-fw fa-check text-primary"></i>
+					<span id="toggleResolveText" class="d-none d-md-inline fw-semibold">Mark Resolved</span>
+				</button>
+
 				{{{ end }}}
 
 				<!-- IMPORT partials/topic/watch.tpl -->
