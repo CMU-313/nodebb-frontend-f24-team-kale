@@ -11,7 +11,7 @@
 
 <div class="d-flex align-items-start gap-3">
 	<!-- Check if posts.anonymous is truthy (e.g., "true") -->
-	{{{ if posts.anonymous }}}
+	{{{ if !posts.anonymous }}}
 		<!-- Anonymous User Block -->
 		<div class="bg-body d-none d-sm-block rounded-circle" style="outline: 2px solid var(--bs-body-bg);">
 			<a class="d-inline-block position-relative text-decoration-none" href="#" aria-label="[[aria:user-avatar-for, "Anonymous"]]">
@@ -44,12 +44,12 @@
 					</a>
 				</div>
 
-				<a class="fw-bold text-nowrap" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.displayname}</a>
+				<a class="fw-bold text-nowrap" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" data-username="{posts.user.username}" data-uid="{posts.user.uid}">Anonymous</a>
 
 			{{{ else }}}
 				
 
-				<a class="fw-bold text-nowrap" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" data-username="{posts.user.username}" data-uid="{posts.user.uid}">Anonymous</a>
+				<a class="fw-bold text-nowrap" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.displayname}</a>
 			{{{end}}}
 
 			{{{ each posts.user.selectedGroups }}}
