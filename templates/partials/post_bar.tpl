@@ -8,11 +8,11 @@
 					<span class="d-none d-md-inline fw-semibold">[[topic:mark-unread]]</span>
 				</button>
 
-				<button id="toggleResolveBtn" class="btn-ghost-sm ff-secondary d-flex gap-2 align-items-center" onclick="toggleResolve()">
-					<i id="resolveIcon" class="fa fa-fw fa-check text-primary"></i>
-					<span id="toggleResolveText" class="d-none d-md-inline fw-semibold">Mark Resolved</span>
-				</button>
 
+				<button component="topic/mark-resolved" id="mark-resolve-btn" class="btn-ghost-sm ff-secondary d-flex gap-2 align-items-center">
+					<i id="resolve-icon" class="fa fa-fw fa-check text-primary"></i>
+					<span id="resolve-text" class="d-none d-md-inline fw-semibold">Mark Resolved</span>
+				</button>
 				{{{ end }}}
 
 				<!-- IMPORT partials/topic/watch.tpl -->
