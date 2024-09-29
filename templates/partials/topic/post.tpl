@@ -11,23 +11,20 @@
 
 <div class="d-flex align-items-start gap-3">
 	<!-- Check if posts.anonymous is truthy (e.g., "true") -->
-	{{{ if !posts.anonymous }}}
-
+	{{{ if posts.anonymous }}}
+		<!-- Anonymous User Block -->
 		<div class="bg-body d-none d-sm-block rounded-circle" style="outline: 2px solid var(--bs-body-bg);">
-			<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" aria-label="[[aria:user-avatar-for, {./user.username}]]">
+			<a class="d-inline-block position-relative text-decoration-none" href="#" aria-label="[[aria:user-avatar-for, "Anonymous"]]">
 				<!-- Display Avatar for Anonymous -->
-				{buildAvatar(posts.user, "48px", true, "", "user/picture")}
-				<span component="user/status" class="position-absolute translate-middle-y border border-white border-2 rounded-circle status {posts.user.status}">
-					<span class="visually-hidden">[[global:{posts.user.status}]]</span>
-				</span>
+				<img src="{config.relative_path}/assets/images/anonymous-avatar.png" alt="Anonymous">
 			</a>
 		</div>
 	{{{ else }}}
-		<!-- Display when posts.anonymous is (e.g., "true" or not defined) -->
-
+		<!-- Non-Anonymous User Block -->
 		<div class="bg-body d-none d-sm-block rounded-circle" style="outline: 2px solid var(--bs-body-bg);">
-			<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" aria-label="[[aria:user-avatar-for, "Anonymous"]]">
-				<!-- Display Avatar for Non-Anonymous -->
+			<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" aria-label="[[aria:user-avatar-for, {./user.username}]]">
+				<!-- Display User Avatar -->
+				{buildAvatar(posts.user, "48px", true, "", "user/picture")}
 			</a>
 		</div>
 	{{{ end }}}
